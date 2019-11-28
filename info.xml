@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<extension key="be.kava.doccle" type="module">
+  <file>doccle</file>
+  <name>KAVA Doccle</name>
+  <description>Doccle stuff for KAVA</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Alain Benbassat</author>
+    <email>alain@businessandcode.eu</email>
+  </maintainer>
+  <urls>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2019-11-28</releaseDate>
+  <version>1.0</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>5.0</ver>
+  </compatibility>
+  <comments>TODO: which functionality is in be.kava.doccle.ixoruploader? Should it stay there?</comments>
+  <civix>
+    <namespace>CRM/Doccle</namespace>
+  </civix>
+</extension>
