@@ -5,11 +5,11 @@ class CRM_Doccle_Helper {
   public function createFinancialBox($sourceContactID, $targetContactID) {
     // get the VAT number of the target contact
     $sql = "
-      select 
-        btw_nummer_24 
-      from 
+      select
+        btw_nummer_24
+      from
         civicrm_value_contact_organisation
-      where 
+      where
         entity_id = $targetContactID
     ";
     $vat = CRM_Core_DAO::singleValueQuery($sql);
@@ -27,11 +27,11 @@ class CRM_Doccle_Helper {
   public function createPatientBox($sourceContactID, $targetContactID) {
     // get the APB number of the target contact
     $sql = "
-      select 
+      select
         apb_nummer_43 apb_nummer
       from
         civicrm_value_contact_apotheekuitbating
-      where 
+      where
         entity_id = $targetContactID
     ";
     $apb = CRM_Core_DAO::singleValueQuery($sql);
@@ -123,7 +123,7 @@ class CRM_Doccle_Helper {
 
     $xml =
 '<?xml version="1.0" encoding="utf-8"?>
- <batch>
+ <batch xmlns="http://ixor.be/docs/receivers">
     <batch-info>
         <id>receiverbatch_' . $batchID . '</id>
     </batch-info>

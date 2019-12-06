@@ -1,44 +1,14 @@
 # be.kava.doccle
 
-![Screenshot](/images/screenshot.png)
+This extension:
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+* automatically creates a "Doccle Connect"-entry for the contact whenever a relationship is created of type:
+  * patientbox
+  * financiële box
+* contains the API: kavadoccle.ixorupload
 
-The extension is licensed under [AGPL-3.0](LICENSE.txt).
+The API should be scheduled as a job that runs e.g. every hour.
 
-## Requirements
+Make sure you define KAVA_IXOR_TOKEN in civicrm.settings.php. It must contain the KAVA test token or production token.
 
-* PHP v5.4+
-* CiviCRM (*FIXME: Version number*)
 
-## Installation (Web UI)
-
-This extension has not yet been published for installation via the web UI.
-
-## Installation (CLI, Zip)
-
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-cd <extension-dir>
-cv dl be.kava.doccle@https://github.com/FIXME/be.kava.doccle/archive/master.zip
-```
-
-## Installation (CLI, Git)
-
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-git clone https://github.com/FIXME/be.kava.doccle.git
-cv en doccle
-```
-
-## Usage
-
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
