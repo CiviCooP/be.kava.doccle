@@ -89,7 +89,7 @@ class CRM_Doccle_Helper {
     // create url tokens
     $token1 = base64_encode($strippedNumber);
     $token2 = base64_encode($hash);
-    $url = "https://secure.doccle.be/doccle-euui/direct/connect?senderName=kava&t1=$token1&$token2";
+    $url = "https://secure.doccle.be/doccle-euui/direct/connect?senderName=kava&t1=$token1&t2=$token2";
 
     // create the XML
     $randomID = $contactID . mt_rand(100, 999);
@@ -119,7 +119,8 @@ class CRM_Doccle_Helper {
 
   private function generateXML($batchID, $receiverID, $boxID, $uuID) {
     $startDate = new DateTime();
-    $endDate = $startDate->add(new DateInterval('P6M'));
+    $endDate = new DateTime();
+    $endDate->add(new DateInterval('P6M'));
 
     $xml =
 '<?xml version="1.0" encoding="utf-8"?>

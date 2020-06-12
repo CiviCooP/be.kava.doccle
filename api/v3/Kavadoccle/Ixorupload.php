@@ -10,7 +10,7 @@ function civicrm_api3_kavadoccle_Ixorupload($params) {
     // select all doccle entries that have to be uploaded
     $doccleTable = CRM_Doccle_Config::singleton()->getDoccleCustomGroup('table_name');
     $customFieldXml = CRM_Doccle_Config::singleton()->getDoccleCustomField('xml', 'column_name');
-    $customFieldConnectionTime = CRM_Doccle_Config::singleton()->getDoccleCustomField('Verbonden_op', 'column_name');
+    $customFieldConnectionTime = CRM_Doccle_Config::singleton()->getDoccleCustomField('opgeladen_op', 'column_name');
 
     // make sure we have the KAVA Doccle Token
     if (!defined('KAVA_IXOR_TOKEN')) {
