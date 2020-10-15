@@ -1,6 +1,30 @@
 <?php
 
 class CRM_Doccle_IxorUploader {
+  public function isReceiverConnected($receiverId) {
+      $token = KAVA_IXOR_TOKEN;
+      $url = "https://docs.ixor.be/api/doccle/receiver?id=" . $receiverId;
+
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, ['access-token: ' . $token]);
+
+      $result = curl_exec($ch);
+      curl_close($ch);
+
+      $json_data = json_decode($result);
+      $linked_to_user = $json_data->linkedToEndUser;
+
+      if ($linked_to_user) {
+          return TRUE;
+      }
+      else {
+          return FALSE;
+      }
+  }
+
   public function uploadXML($xml) {
     // create the ZIP file with the XML
     $zipFile = $this->zipXML($xml);
