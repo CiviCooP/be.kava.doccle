@@ -11,6 +11,7 @@ function civicrm_api3_kavadoccle_Receiverconncheck($params) {
         $doccleTable = CRM_Doccle_Config::singleton()->getDoccleCustomGroup('table_name');
         $customFieldReceiverID = CRM_Doccle_Config::singleton()->getDoccleCustomField('Receiver_id', 'column_name');
         $customFieldConnectionTime = CRM_Doccle_Config::singleton()->getDoccleCustomField('Verbonden_op', 'column_name');
+        $customFieldLink = CRM_Doccle_Config::singleton()->getDoccleCustomField('Doccle_Connect_link', 'column_name');
 
         // make sure we have the KAVA Doccle Token
         if (!defined('KAVA_IXOR_TOKEN')) {
@@ -49,7 +50,7 @@ function civicrm_api3_kavadoccle_Receiverconncheck($params) {
                 $successful++;
 
                 // success, update the timestamp
-                $sqlUpdate = "UPDATE $doccleTable SET $customFieldConnectionTime = '" . date('Y-m-d') . "' WHERE id = " . $dao->id;
+                $sqlUpdate = "UPDATE $doccleTable SET $customFieldConnectionTime = '" . date('Y-m-d') . "', $customFieldLink = NULL WHERE id = " . $dao->id;
                 CRM_Core_DAO::executeQuery($sqlUpdate);
             }
             else {
