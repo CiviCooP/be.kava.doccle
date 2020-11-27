@@ -93,7 +93,7 @@ class CRM_Doccle_Helper {
 
     // create the XML
     $randomID = $contactID . mt_rand(100, 999);
-    $xml = $this->generateXML($randomID, $APBorVATnumber, $strippedNumber, $hash);
+    $xml = $this->generateXML($randomID, $strippedNumber, $strippedNumber, $hash);
 
     $entityTable = CRM_Doccle_Config::singleton()->getDoccleCustomGroup('table_name');
     $customFieldLabel = CRM_Doccle_Config::singleton()->getDoccleCustomField('Doccle_Connect_label', 'id');
